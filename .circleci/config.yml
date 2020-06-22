@@ -37,10 +37,10 @@ commands:
           command: sudo docker-php-ext-install pdo_mysql
   restore-cache-composer:
     steps:
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "laravel/composer.json" }}
-            - v1-dependencies-
+      #- restore_cache:
+      #    keys:
+      #      - v1-dependencies-{{ checksum "laravel/composer.json" }}
+      #     - v1-dependencies-
   composer-install:
     steps:
       - run:
