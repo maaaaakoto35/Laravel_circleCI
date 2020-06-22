@@ -10,7 +10,7 @@ jobs: # ステップの集合
   build: # Workflows を使用しない実行では、エントリポイントとして `build` ジョブが必要
     docker: # Docker でステップを実行します
 
-      - image: circleci/php:7.2.5-node-browsers # このイメージをすべての `steps` が実行されるプライマリコンテナとして使用します
+      - image: circleci/php:7.3-browsers # このイメージをすべての `steps` が実行されるプライマリコンテナとして使用します
     working_directory: ~/laravel # ステップが実行されるディレクトリ
     steps: # 実行可能コマンドの集合
       - checkout # ソースコードを作業ディレクトリにチェックアウトする特別なステップ
