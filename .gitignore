@@ -10,3 +10,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+/.idea
+/docker/ash/.ash_history
+/docker/php/psysh
+!/docker/php/psysh/config.php
+/logs/*
