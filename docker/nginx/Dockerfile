@@ -1,7 +1,7 @@
 FROM nginx:1.19-alpine
 
-ADD ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./docker/nginx/default.conf /etc/nginx/conf.d/default.conf
 
-RUN mkdir -p /work/app/public
+COPY ./src /work
 
-ADD ./public /work/app/public
+EXPOSE 80
