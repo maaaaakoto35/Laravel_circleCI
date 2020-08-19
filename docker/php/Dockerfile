@@ -39,14 +39,16 @@ RUN apk add --no-cache freetype libpng libjpeg-turbo freetype-dev libpng-dev lib
   docker-php-ext-install -j${NPROC} gd && \
   apk del --no-cache freetype-dev libpng-dev libjpeg-turbo-dev
 
-ADD . /work/app
+ADD ./src /work
 
-WORKDIR /work/app
+WORKDIR /work
 
-RUN chmod -R 777 /var/www/storage \
-        /var/www/bootstrap/cache
+RUN chmod -R 777 /work/storage \
+        /work/bootstrap/cache
 
+RUN composer install
 RUN php artisan key:generate
 RUN php artisan config:clear
 RUN php artisan config:cache
-RUN php artisan optimize
+
+EXPOSE 9000
